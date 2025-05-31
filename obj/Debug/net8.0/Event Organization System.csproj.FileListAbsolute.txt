@@ -156,3 +156,13 @@ D:\pojects_and_hws\.net Training\Event Organization System\Event Organization Sy
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\dotenv.net.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\obj\Debug\net8.0\Event Organization System.sourcelink.json

@@ -21,7 +21,7 @@ namespace Event_Organization_System.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("Event_Organization_System.model.User", b =>
+            modelBuilder.Entity("Event_Organization_System.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
