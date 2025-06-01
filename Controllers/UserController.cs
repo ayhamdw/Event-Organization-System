@@ -1,4 +1,5 @@
-﻿using Event_Organization_System.IServices;
+﻿using Event_Organization_System.Generic;
+using Event_Organization_System.IServices;
 using Event_Organization_System.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,8 +21,8 @@ public class UserController : ControllerBase
         var check = loginService.Login(model);
         if (check)
         {
-            return Accepted("Login successful");
+            return Ok(GeneralApiResponse<object>.Success("Uses Successfully Logged In"));
         }
-        return Unauthorized("Invalid email or password");
+        return Unauthorized(GeneralApiResponse<object>.Failure("Invalid username or password" , 401));
     }
 }
