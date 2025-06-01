@@ -18,11 +18,12 @@ public class UserController : ControllerBase
     [HttpPost("login")]
     public async Task <IActionResult> Login([FromBody] LoginViewModel model)
     {
-        var check = loginService.Login(model);
-        if (check)
-        {
-            return Ok(GeneralApiResponse<object>.Success("Uses Successfully Logged In"));
-        }
-        return Unauthorized(GeneralApiResponse<object>.Failure("Invalid username or password" , 401));
+        // var check = loginService.Login(model);
+        // if (check)
+        // {
+        //     return Ok(GeneralApiResponse<object>.Success("Uses Successfully Logged In"));
+        // }
+        // return Unauthorized(GeneralApiResponse<object>.Failure("Invalid username or password" , 401));
+        throw new Exception("TEST EXCEPTION");
     }
 }

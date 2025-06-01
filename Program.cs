@@ -2,6 +2,7 @@ using System.Text;
 using dotenv.net;
 using Event_Organization_System.controller;
 using Event_Organization_System.IServices;
+using Event_Organization_System.Middleware;
 using Event_Organization_System.model;
 using Event_Organization_System.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,6 +54,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

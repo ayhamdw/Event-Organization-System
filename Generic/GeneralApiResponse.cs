@@ -15,7 +15,6 @@ public class GeneralApiResponse<T>
         Timestamp = DateTime.UtcNow;
     }
 
-    // Success response with data
     public static GeneralApiResponse<T> Success(T data, string message = "Operation completed successfully", int statusCode = 200)
     {
         return new GeneralApiResponse<T>
@@ -28,7 +27,6 @@ public class GeneralApiResponse<T>
         };
     }
 
-    // Success response without data
     public static GeneralApiResponse<T> Success(string message = "Operation completed successfully", int statusCode = 200)
     {
         return new GeneralApiResponse<T>
@@ -41,7 +39,6 @@ public class GeneralApiResponse<T>
         };
     }
 
-    // Failure response with single error
     public static GeneralApiResponse<T> Failure(string error, int statusCode = 400)
     {
         return new GeneralApiResponse<T>
@@ -54,7 +51,6 @@ public class GeneralApiResponse<T>
         };
     }
 
-    // Failure response with multiple errors
     public static GeneralApiResponse<T> Failure(List<string> errors, int statusCode = 400)
     {
         return new GeneralApiResponse<T>
@@ -67,7 +63,6 @@ public class GeneralApiResponse<T>
         };
     }
 
-    // Failure response with custom message and errors
     public static GeneralApiResponse<T> Failure(string message, List<string> errors, int statusCode = 400)
     {
         return new GeneralApiResponse<T>
