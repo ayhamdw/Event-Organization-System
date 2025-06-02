@@ -1,11 +1,14 @@
 using System.Text;
 using dotenv.net;
 using Event_Organization_System.controller;
+using Event_Organization_System.Generic;
+using Event_Organization_System.Helper;
 using Event_Organization_System.IServices;
 using Event_Organization_System.Middleware;
 using Event_Organization_System.model;
 using Event_Organization_System.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -19,8 +22,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 if (connectionString == null)
 {
-    throw new InvalidOperationException("Missing connection string.");
+    throw new InvalidOperationException("Missing connection string");
 }
+
+builder.Services.AddControllers()
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options.InvalidModelStateResponseFactory = context =>
+        {
+            var errors = ValidationErrorExtractor.GetValidationErrors(context);
+            var response = GeneralApiResponse<object>.Failure(errors);
+            return new BadRequestObjectResult(response);
+        };
+    });
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -44,7 +58,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<ILoginService , LoginServices>();
+builder.Services.AddScoped<IAuthServices , AuthServices>();
+builder.Services.AddScoped<IJwtService, JwtServices>();
+builder.Services.AddScoped<IValidatePasswordServices, ValidatePasswordServices>();
+builder.Services.AddScoped<IUserServices, UserServices>();
 
 var app = builder.Build();
 

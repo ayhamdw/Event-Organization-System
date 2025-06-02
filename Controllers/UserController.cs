@@ -8,22 +8,25 @@ namespace Event_Organization_System.controller;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly  ILoginService loginService;
+    private readonly  IAuthServices _authServices;
 
-    public UserController(ILoginService loginService)
+    public UserController(IAuthServices authServices)
     {
-        this.loginService = loginService;
+        _authServices = authServices;
     }
     
     [HttpPost("login")]
     public async Task <IActionResult> Login([FromBody] LoginViewModel model)
     {
-        // var check = loginService.Login(model);
-        // if (check)
-        // {
-        //     return Ok(GeneralApiResponse<object>.Success("Uses Successfully Logged In"));
-        // }
-        // return Unauthorized(GeneralApiResponse<object>.Failure("Invalid username or password" , 401));
-        throw new Exception("TEST EXCEPTION");
+        var response = await _authServices.Login(model);
+        return Ok(GeneralApiResponse<object>.Success( response, "Uses Successfully Logged In" ));
+        
+    }
+    
+    [HttpPost("register")]
+    public async Task <IActionResult> Register([FromBody] RegisterViewModel model)
+    {
+        var response = await _authServices.Register(model);
+        return Created("" , GeneralApiResponse<object>.Success(response, "User Successfully Registered" , 201));
     }
 }
