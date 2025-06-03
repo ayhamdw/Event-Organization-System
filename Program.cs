@@ -1,6 +1,5 @@
 using System.Text;
 using dotenv.net;
-using Event_Organization_System.controller;
 using Event_Organization_System.Generic;
 using Event_Organization_System.Helper;
 using Event_Organization_System.IServices;
@@ -31,7 +30,7 @@ builder.Services.AddControllers()
         options.InvalidModelStateResponseFactory = context =>
         {
             var errors = ValidationErrorExtractor.GetValidationErrors(context);
-            var response = GeneralApiResponse<object>.Failure(errors);
+            var response = GeneralApiResponse<string>.Failure(errors);
             return new BadRequestObjectResult(response);
         };
     });
@@ -62,6 +61,7 @@ builder.Services.AddScoped<IAuthServices , AuthServices>();
 builder.Services.AddScoped<IJwtService, JwtServices>();
 builder.Services.AddScoped<IValidatePasswordServices, ValidatePasswordServices>();
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IEventServices, EventServices>();
 
 var app = builder.Build();
 
