@@ -76,4 +76,28 @@ public class EventServices : IEventServices
         var eventResponse = new EventResponseViewModel(existingEvent);
         return eventResponse;
     }
+
+    public async Task<bool> DeleteEventAsync(int id, int userId)
+    {
+        if (id <= 0)
+        {
+            throw new ArgumentException("Please provide a valid event id");
+        }
+        
+        var deletedEvent = await _context.Events.FirstOrDefaultAsync(e => e.Id == id);
+        if (deletedEvent == null)
+        {
+            throw new KeyNotFoundException("Event not found");  
+        }
+
+        if (deletedEvent.CreatedBy != userId)
+        {
+            throw new UnauthorizedAccessException("You are not authorized to delete this event");
+        }
+
+        _context.Events.Remove(deletedEvent);
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
 }

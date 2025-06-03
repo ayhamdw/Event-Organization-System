@@ -44,5 +44,14 @@ public class EventController : ControllerBase
         var response = await _eventServices.UpdateEventAsync(eventViewModel, id, userId);
         return Ok(GeneralApiResponse<EventResponseViewModel>.Success(response));
     }
+
+    [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Organizer")]
+    public async Task<IActionResult> DeleteEvent([FromRoute] int id)
+    {
+        var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        await _eventServices.DeleteEventAsync(id, userId);
+        return Ok(GeneralApiResponse<bool>.Success());
+    }
     
 }
