@@ -1,5 +1,5 @@
 ﻿using Event_Organization_System.ViewModels;
-
+using System.Security.Claims;
 namespace Event_Organization_System.model;
 
 public class User

@@ -41,7 +41,7 @@ public class AuthServices: IAuthServices
             throw new UnauthorizedAccessException("Invalid email or password");
         }
 
-        var token = _jwtService.GenerateToken(user.Email, user.Role);
+        var token = _jwtService.GenerateToken(user.Id, user.Role);
 
         var result = new LoginResponseViewModel(token, user.Email, user.Role);
         return result;
@@ -70,7 +70,7 @@ public class AuthServices: IAuthServices
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
         
-        var token = _jwtService.GenerateToken(user.Email, user.Role);
+        var token = _jwtService.GenerateToken(user.Id, user.Role);
         var result = new RegisterResponseViewModel(token, user.Email, user.Role);
         return result;
     }

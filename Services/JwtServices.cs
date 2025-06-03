@@ -8,11 +8,12 @@ namespace Event_Organization_System.Services;
 
 public class JwtServices : IJwtService
 {
-    public string GenerateToken(string email, string role)
+    public string GenerateToken(int id, string role)
     {
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.Sub, email),
+            new Claim(ClaimTypes.NameIdentifier , Convert.ToString(id)),
+            new Claim(JwtRegisteredClaimNames.Sub, Convert.ToString(id)),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             new Claim(ClaimTypes.Role, role),
         };

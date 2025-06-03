@@ -1,4 +1,5 @@
-﻿using Event_Organization_System.Generic;
+﻿using System.Security.Claims;
+using Event_Organization_System.Generic;
 using Event_Organization_System.IServices;
 using Event_Organization_System.ViewModels;
 using Event_Organization_System.ViewModels.Responses;
@@ -25,12 +26,23 @@ public class EventController : ControllerBase
     }
     
     [HttpPost]
-    [Authorize (Roles = "Admin , Organizer")]
+    [Authorize (Roles = "Organizer")]
     public async Task<IActionResult> CreateEvent([FromBody] EventViewModel eventViewModel)
     {
+        var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
-        var createdEvent = await _eventServices.CreateEventAsync(eventViewModel);
+        var createdEvent = await _eventServices.CreateEventAsync(eventViewModel , userId);
         return Created("",
             GeneralApiResponse<EventResponseViewModel>.Success(createdEvent, "Event created successfully" , 201));
     }
+
+    [HttpPut("{id:int}")]
+    [Authorize(Roles = "Organizer")]
+    public async Task<IActionResult> UpdateEvent([FromRoute]int id, [FromBody] EventViewModel eventViewModel)
+    {
+        var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        var response = await _eventServices.UpdateEventAsync(eventViewModel, id, userId);
+        return Ok(GeneralApiResponse<EventResponseViewModel>.Success(response));
+    }
+    
 }
