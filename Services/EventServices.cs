@@ -21,8 +21,9 @@ public class EventServices : IEventServices
     public async Task<List<EventResponseViewModel>> GetAllEventsAsync(GetEventViewModel getEventViewModel)
     {
         var events =  await _context.Events.ToListAsync();
-        var newEvents = GeneralPaginationAndFilter.ApplyPagination(events, getEventViewModel.PageNumber,
+        var newEvents = CollectionUtils.ApplyPagination(events, getEventViewModel.PageNumber,
             getEventViewModel.PageSize);
+        newEvents = CollectionUtils.ApplySorting(newEvents, getEventViewModel.SortBy);
         var eventResponses = newEvents.Select(e => new EventResponseViewModel(e)).ToList();
         return eventResponses;
     }
