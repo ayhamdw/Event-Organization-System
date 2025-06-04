@@ -6,6 +6,7 @@ namespace Event_Organization_System.IServices;
 public interface IEventServices
 {
     Task<List<EventResponseViewModel>> GetAllEventsAsync();
+    Task<EventResponseViewModel> GetEventByIdAsync(int id);
     Task<EventResponseViewModel> CreateEventAsync(EventViewModel eventViewModel, int userId);
     Task<EventResponseViewModel> UpdateEventAsync(EventViewModel eventViewModel , int id , int userId);
     Task<bool> DeleteEventAsync(int id, int userId);

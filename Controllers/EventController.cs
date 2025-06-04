@@ -25,6 +25,13 @@ public class EventController : ControllerBase
         return Ok(GeneralApiResponse<List<EventResponseViewModel>>.Success(events));
     }
     
+    [HttpGet("{id:int}")]
+    public async Task <IActionResult> GetEventById([FromRoute] int id)
+    {
+        var eventResponse = await _eventServices.GetEventByIdAsync(id);
+        return Ok(GeneralApiResponse<EventResponseViewModel>.Success(eventResponse));
+    }
+    
     [HttpPost]
     [Authorize (Roles = "Organizer")]
     public async Task<IActionResult> CreateEvent([FromBody] EventViewModel eventViewModel)

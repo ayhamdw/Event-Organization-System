@@ -24,6 +24,22 @@ public class EventServices : IEventServices
         return eventResponses;
     }
 
+    public async Task<EventResponseViewModel> GetEventByIdAsync(int id)
+    {
+        if (id <= 0)
+        {
+            throw new ArgumentException("Please provide a valid event id");
+        }
+
+        var existingEvent = await _context.Events.FirstOrDefaultAsync(e => e.Id == id);
+        if (existingEvent == null)
+        {
+            throw new KeyNotFoundException("Event not found");
+        }
+        var eventResponse = new EventResponseViewModel(existingEvent);
+        return eventResponse;
+    }
+
     public async Task<EventResponseViewModel> CreateEventAsync(EventViewModel eventViewModel , int userId)
     {
         ArgumentNullException.ThrowIfNull(eventViewModel);
