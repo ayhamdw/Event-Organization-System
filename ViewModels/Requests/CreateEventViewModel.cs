@@ -2,7 +2,7 @@
 
 namespace Event_Organization_System.ViewModels;
 
-public class EventViewModel
+public class CreateEventViewModel
 {
     [Required]
     public string Title { get; set; }

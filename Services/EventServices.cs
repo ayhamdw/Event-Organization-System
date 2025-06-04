@@ -4,6 +4,7 @@ using Event_Organization_System.ViewModels;
 using Event_Organization_System.ViewModels.Responses;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Event_Organization_System.Generic;
 
 namespace Event_Organization_System.Services;
 
@@ -17,10 +18,12 @@ public class EventServices : IEventServices
     }
 
 
-    public async Task<List<EventResponseViewModel>> GetAllEventsAsync()
+    public async Task<List<EventResponseViewModel>> GetAllEventsAsync(GetEventViewModel getEventViewModel)
     {
-        var events = await _context.Events.ToListAsync();
-        var eventResponses = events.Select(e => new EventResponseViewModel(e)).ToList();
+        var events =  await _context.Events.ToListAsync();
+        var newEvents = GeneralPaginationAndFilter.ApplyPagination(events, getEventViewModel.PageNumber,
+            getEventViewModel.PageSize);
+        var eventResponses = newEvents.Select(e => new EventResponseViewModel(e)).ToList();
         return eventResponses;
     }
 
@@ -40,18 +43,18 @@ public class EventServices : IEventServices
         return eventResponse;
     }
 
-    public async Task<EventResponseViewModel> CreateEventAsync(EventViewModel eventViewModel , int userId)
+    public async Task<EventResponseViewModel> CreateEventAsync(CreateEventViewModel createEventViewModel , int userId)
     {
-        ArgumentNullException.ThrowIfNull(eventViewModel);
+        ArgumentNullException.ThrowIfNull(createEventViewModel);
 
         var newEvent = new Event
         {
-            Title = eventViewModel.Title,
-            Description = eventViewModel.Description,
-            Time = eventViewModel.Time,
-            Location = eventViewModel.Location,
-            TotalSeats = eventViewModel.TotalSeats,
-            RemainingSeats = eventViewModel.RemainingSeats,
+            Title = createEventViewModel.Title,
+            Description = createEventViewModel.Description,
+            Time = createEventViewModel.Time,
+            Location = createEventViewModel.Location,
+            TotalSeats = createEventViewModel.TotalSeats,
+            RemainingSeats = createEventViewModel.RemainingSeats,
             CreatedBy = userId
         };
         
@@ -62,9 +65,9 @@ public class EventServices : IEventServices
         return eventResponse;
     }
 
-    public async Task<EventResponseViewModel> UpdateEventAsync(EventViewModel eventViewModel, int id , int userId)
+    public async Task<EventResponseViewModel> UpdateEventAsync(CreateEventViewModel createEventViewModel, int id , int userId)
     {
-        if (eventViewModel == null || id <= 0)
+        if (createEventViewModel == null || id <= 0)
         {
             throw new ArgumentException("Please provide a valid event view model and ID");
         }
@@ -81,12 +84,12 @@ public class EventServices : IEventServices
             throw new UnauthorizedAccessException("You are not authorized to update this event");
         }
         
-        existingEvent.Title = eventViewModel.Title;
-        existingEvent.Description = eventViewModel.Description;
-        existingEvent.Time = eventViewModel.Time;
-        existingEvent.Location = eventViewModel.Location;
-        existingEvent.TotalSeats = eventViewModel.TotalSeats;
-        existingEvent.RemainingSeats = eventViewModel.RemainingSeats;
+        existingEvent.Title = createEventViewModel.Title;
+        existingEvent.Description = createEventViewModel.Description;
+        existingEvent.Time = createEventViewModel.Time;
+        existingEvent.Location = createEventViewModel.Location;
+        existingEvent.TotalSeats = createEventViewModel.TotalSeats;
+        existingEvent.RemainingSeats = createEventViewModel.RemainingSeats;
         
         await _context.SaveChangesAsync();
         var eventResponse = new EventResponseViewModel(existingEvent);

@@ -19,9 +19,9 @@ public class EventController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAllEvents()
+    public async Task<IActionResult> GetAllEvents([FromQuery] GetEventViewModel getEventViewModel)
     {
-        var events = await _eventServices.GetAllEventsAsync();
+        var events = await _eventServices.GetAllEventsAsync(getEventViewModel);
         return Ok(GeneralApiResponse<List<EventResponseViewModel>>.Success(events));
     }
     
@@ -34,21 +34,21 @@ public class EventController : ControllerBase
     
     [HttpPost]
     [Authorize (Roles = "Organizer")]
-    public async Task<IActionResult> CreateEvent([FromBody] EventViewModel eventViewModel)
+    public async Task<IActionResult> CreateEvent([FromBody] CreateEventViewModel createEventViewModel)
     {
         var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
-        var createdEvent = await _eventServices.CreateEventAsync(eventViewModel , userId);
+        var createdEvent = await _eventServices.CreateEventAsync(createEventViewModel , userId);
         return Created("",
             GeneralApiResponse<EventResponseViewModel>.Success(createdEvent, "Event created successfully" , 201));
     }
 
     [HttpPut("{id:int}")]
     [Authorize(Roles = "Organizer")]
-    public async Task<IActionResult> UpdateEvent([FromRoute]int id, [FromBody] EventViewModel eventViewModel)
+    public async Task<IActionResult> UpdateEvent([FromRoute]int id, [FromBody] CreateEventViewModel createEventViewModel)
     {
         var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-        var response = await _eventServices.UpdateEventAsync(eventViewModel, id, userId);
+        var response = await _eventServices.UpdateEventAsync(createEventViewModel, id, userId);
         return Ok(GeneralApiResponse<EventResponseViewModel>.Success(response));
     }
 
