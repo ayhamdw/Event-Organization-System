@@ -27,4 +27,16 @@ public class TicketController : ControllerBase
         var result = await _ticketServices.BookSeatAsync(bookTicketViewModel , userId);
         return Created("" , GeneralApiResponse<bool>.Success("Ticket booked successfully", 201));
     }
+
+    [HttpDelete("{ticketId:int}")]
+    public async Task<IActionResult> CancelTicket(int ticketId)
+    {
+        var userId = Convert.ToInt32(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        var result = await _ticketServices.CancelTicketAsync(ticketId, userId);
+        if (!result)
+        {
+            return NotFound(GeneralApiResponse<bool>.Failure("Ticket not found or could not be cancelled"));
+        }
+        return Ok(GeneralApiResponse<bool>.Success("Ticket cancelled successfully"));
+    }
 }

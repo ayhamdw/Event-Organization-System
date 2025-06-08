@@ -2,6 +2,7 @@
 using Event_Organization_System.IServices;
 using Event_Organization_System.model;
 using Event_Organization_System.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Event_Organization_System.Services;
 
@@ -36,6 +37,22 @@ public class TicketServices : ITicketServices
 
         await _context.Tickets.AddAsync(ticket);
         await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> CancelTicketAsync(int ticketId, int userId)
+    {
+        if (ticketId <= 0) throw new ArgumentException("Ticket ID must be positive", nameof(ticketId));
+        if (userId <= 0) throw new ArgumentException("User ID must be positive", nameof(userId));
+
+        var ticket = await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId && t.UserId == userId);
+        if (ticket == null) return false;
+
+        ticket.Status = TicketStatus.Cancelled;
+
+        _context.Tickets.Update(ticket);
+        await _context.SaveChangesAsync();
+        
         return true;
     }
 }
