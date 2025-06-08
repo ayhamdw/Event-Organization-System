@@ -18,7 +18,7 @@ public class TicketServices : ITicketServices
     public async Task<bool> BookSeatAsync(BookTicketViewModel bookTicketViewModel , int userId)
     {
         if (userId <= 0)
-            throw new ArgumentException("User ID must be positive", nameof(bookTicketViewModel.UserId));
+            throw new ArgumentException("User ID must be positive", nameof(userId));
         
         if (bookTicketViewModel.EventId <= 0)
             throw new ArgumentException("Event ID must be positive", nameof(bookTicketViewModel.EventId));
