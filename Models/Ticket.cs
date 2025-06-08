@@ -17,4 +17,15 @@ public class Ticket
     public DateTime PurchaseDate { get; set; }
     public TicketType Type { get; set; }
     public decimal Price { get; set; }
+    public TicketStatus Status { get; set; }
+
+    public Ticket(int userId, int eventId, TicketType type, decimal price)
+    {
+        UserId = userId;
+        EventId = eventId;
+        Type = type;
+        Price = price;
+        PurchaseDate = DateTime.UtcNow;
+        Status = TicketStatus.Active;
+    }
 }

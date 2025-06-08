@@ -62,6 +62,7 @@ builder.Services.AddScoped<IJwtService, JwtServices>();
 builder.Services.AddScoped<IValidatePasswordServices, ValidatePasswordServices>();
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IEventServices, EventServices>();
+builder.Services.AddScoped<ITicketServices, TicketServices>();
 
 var app = builder.Build();
 
