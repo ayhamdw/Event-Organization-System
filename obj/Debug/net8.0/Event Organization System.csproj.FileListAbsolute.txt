@@ -166,3 +166,4 @@ D:\pojects_and_hws\.net Training\Event Organization System\Event Organization Sy
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\obj\Debug\net8.0\Event Organization System.sourcelink.json
+D:\pojects_and_hws\.net Training\Event Organization System\Event Organization System\bin\Debug\net8.0\Event Organization System.staticwebassets.runtime.json

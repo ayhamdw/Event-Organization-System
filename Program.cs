@@ -65,15 +65,29 @@ builder.Services.AddScoped<IEventServices, EventServices>();
 builder.Services.AddScoped<ITicketServices, TicketServices>();
 
 var app = builder.Build();
+app.UseStaticFiles();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Event Organization System API V1");
+        c.RoutePrefix = string.Empty;
+
+        c.InjectStylesheet("/swagger-ui/custom.css");
+        c.InjectJavascript("/swagger-ui/custom.js");
+
+    });
 }
 
+
+
+
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 
 app.UseAuthentication();
 app.UseAuthorization();

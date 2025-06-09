@@ -1,0 +1,97 @@
+/* === Global background and typography === */
+body {
+    background-color: #0e1117 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c9d1d9 !important;
+}
+
+.swagger-ui .topbar {
+    background-color: #1f2937 !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.swagger-ui .topbar-wrapper span {
+    color: #38bdf8 !important;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* === Endpoint blocks === */
+.swagger-ui .opblock {
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.swagger-ui .opblock-summary {
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-weight: 500;
+}
+
+.swagger-ui .opblock-summary-method {
+    background-color: #0f766e !important;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.swagger-ui .opblock-description-wrapper,
+.swagger-ui .opblock-body {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+/* === Info Section === */
+.swagger-ui .info {
+    background-color: #1f2937;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-left: 5px solid #38bdf8;
+}
+
+/* === Inputs === */
+.swagger-ui input,
+.swagger-ui textarea,
+.swagger-ui select {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 6px !important;
+}
+
+/* === Buttons === */
+.swagger-ui .btn {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+    padding: 8px 14px !important;
+    font-weight: 500;
+}
+
+.swagger-ui .btn:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* === Tags (section titles) === */
+.swagger-ui .opblock-tag {
+    background-color: #1e40af !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* === Make links pretty === */
+.swagger-ui a {
+    color: #60a5fa !important;
+    text-decoration: none;
+}
+
+.swagger-ui a:hover {
+    text-decoration: underline;
+}
