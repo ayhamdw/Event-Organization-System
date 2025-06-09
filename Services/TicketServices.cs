@@ -2,6 +2,7 @@
 using Event_Organization_System.IServices;
 using Event_Organization_System.model;
 using Event_Organization_System.ViewModels;
+using Event_Organization_System.ViewModels.Responses;
 using Microsoft.EntityFrameworkCore;
 
 namespace Event_Organization_System.Services;
@@ -121,5 +122,22 @@ public class TicketServices : ITicketServices
         _logger.LogInformation("Ticket cancelled successfully for Ticket ID: {TicketId}, User ID: {UserId}", ticketId, userId);
         
         return true;
+    }
+
+    public async Task<List<PersonalTicketResponseViewModel>> GetMyBookingAsync(int userId)
+    {
+        if (userId <= 0)
+        {
+            _logger.LogError("Invalid User ID: {UserId}", userId);
+            throw new ArgumentException("User ID must be positive", nameof(userId));
+        }
+
+        var events = await _context.Tickets
+            .Where(t => t.UserId == userId && t.Status != TicketStatus.Cancelled)
+            .Join(_context.Events, t => t.EventId, e => e.Id, (t, e) => new PersonalTicketResponseViewModel(e.Title , e.Description , e.Location , e.Time))
+            .ToListAsync();
+
+        return events;
+
     }
 }
