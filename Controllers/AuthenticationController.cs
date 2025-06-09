@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Event_Organization_System.controller;
 [ApiController]
 [Route("api/[controller]")]
-public class UserController : ControllerBase
+public class AuthenticationController : ControllerBase
 {
     private readonly  IAuthServices _authServices;
 
-    public UserController(IAuthServices authServices)
+    public AuthenticationController(IAuthServices authServices)
     {
         _authServices = authServices;
     }

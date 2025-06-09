@@ -12,5 +12,4 @@ public class RegisterViewModel
     
     [Required (ErrorMessage = "Password is required")]
     public string Password { get; set; }
-    public string Role { get; set; } = "user";
 }

@@ -1,4 +1,5 @@
-﻿using Event_Organization_System.IServices;
+﻿using Event_Organization_System.Enums;
+using Event_Organization_System.IServices;
 using Event_Organization_System.model;
 using Event_Organization_System.ViewModels;
 using Event_Organization_System.ViewModels.Responses;
@@ -41,9 +42,9 @@ public class AuthServices: IAuthServices
             throw new UnauthorizedAccessException("Invalid email or password");
         }
 
-        var token = _jwtService.GenerateToken(user.Id, user.Role);
+        var token = _jwtService.GenerateToken(user.Id, user.Role.ToString());
 
-        var result = new LoginResponseViewModel(token, user.Email, user.Role);
+        var result = new LoginResponseViewModel(token, user.Email, user.Role.ToString());
         return result;
     }
 
@@ -66,12 +67,12 @@ public class AuthServices: IAuthServices
         }
         
         var hashedPassword = _validatePasswordServices.HashPassword(model.Password);
-        var user = new User(model.Name, model.Email, hashedPassword, model.Role);
+        var user = new User(model.Name, model.Email, hashedPassword, UserRole.User);
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
         
-        var token = _jwtService.GenerateToken(user.Id, user.Role);
-        var result = new RegisterResponseViewModel(token, user.Email, user.Role);
+        var token = _jwtService.GenerateToken(user.Id, user.Role.ToString());
+        var result = new RegisterResponseViewModel(token, user.Email, user.Role.ToString());
         return result;
     }
 }
