@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4zX1eL/1Lu+h+64FiYB6Nc7S++Y+D4PXw8gKgxXl/3c=",
+  "Hash": "x+CXhxfSVICChCmx3mTk5V7CuPMKqBTeY+ac2Usaomw=",
   "Source": "Event Organization System",
   "BasePath": "_content/Event Organization System",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.js"
+    },
+    {
+      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\swagger-ui\\logo.png",
+      "SourceId": "Event Organization System",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\",
+      "BasePath": "_content/Event Organization System",
+      "RelativePath": "swagger-ui/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\logo.png"
     }
   ]
 }
