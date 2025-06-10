@@ -19,6 +19,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 if (connectionString == null)
 {
     throw new InvalidOperationException("Missing connection string");
