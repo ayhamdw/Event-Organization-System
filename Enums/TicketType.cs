@@ -4,4 +4,5 @@ public enum TicketType
 {
     VIP,
     Regular,
+    Free,
 }
