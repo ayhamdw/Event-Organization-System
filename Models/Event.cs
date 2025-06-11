@@ -14,4 +14,5 @@ public class Event
     public int CreatedBy { get; set; }
     [ForeignKey("CreatedBy")]
     public User User { get; set; }
+    public DateTime CreatedAt { get; set; }
 }
