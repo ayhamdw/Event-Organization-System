@@ -66,10 +66,10 @@ builder.Services.AddScoped<IEventServices, EventServices>();
 builder.Services.AddScoped<ITicketServices, TicketServices>();
 
 var app = builder.Build();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
