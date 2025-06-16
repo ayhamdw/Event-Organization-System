@@ -68,6 +68,13 @@ builder.Services.AddScoped<ITicketServices, TicketServices>();
 var app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+app.UseHttpsRedirection();
 
 if (app.Environment.IsDevelopment())
 {
@@ -83,14 +90,4 @@ if (app.Environment.IsDevelopment())
 
     });
 }
-
-app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
-app.UseHttpsRedirection();
-
-
 app.Run();
