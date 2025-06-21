@@ -1,10 +1,10 @@
 ﻿using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using Event_Organization_System.IServices;
+using EventOrganizationSystem.IServices;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Org.BouncyCastle.Crypto.Generators;
 
-namespace Event_Organization_System.Services;
+namespace EventOrganizationSystem.Services;
 
 public class ValidatePasswordServices : IValidatePasswordServices
 {

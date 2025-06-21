@@ -1,8 +1,8 @@
-﻿using Event_Organization_System.ViewModels;
+﻿using EventOrganizationSystem.ViewModels;
 using System.Security.Claims;
-using Event_Organization_System.Enums;
+using EventOrganizationSystem.Enums;
 
-namespace Event_Organization_System.model;
+namespace EventOrganizationSystem.model;
 
 public class User
 {

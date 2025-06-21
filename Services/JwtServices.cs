@@ -1,10 +1,10 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Event_Organization_System.IServices;
+using EventOrganizationSystem.IServices;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Event_Organization_System.Services;
+namespace EventOrganizationSystem.Services;
 
 public class JwtServices : IJwtService
 {

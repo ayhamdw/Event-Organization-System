@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Event_Organization_System.model;
+namespace EventOrganizationSystem.model;
 
 public class ApplicationDbContext : DbContext
 {

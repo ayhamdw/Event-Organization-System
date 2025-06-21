@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Net;
-using Event_Organization_System.Generic;
+using EventOrganizationSystem.Generic;
 
-namespace Event_Organization_System.Middleware;
+namespace EventOrganizationSystem.Middleware;
 
 public class ExceptionHandlingMiddleware
 {

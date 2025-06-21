@@ -1,11 +1,11 @@
 using System.Text;
 using dotenv.net;
-using Event_Organization_System.Generic;
-using Event_Organization_System.Helper;
-using Event_Organization_System.IServices;
-using Event_Organization_System.Middleware;
-using Event_Organization_System.model;
-using Event_Organization_System.Services;
+using EventOrganizationSystem.Generic;
+using EventOrganizationSystem.Helper;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.Middleware;
+using EventOrganizationSystem.model;
+using EventOrganizationSystem.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -82,7 +82,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Event Organization System API V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "EventOrganizationSystem API V1");
         c.RoutePrefix = string.Empty;
         c.InjectStylesheet("/swagger-ui/custom.css");
         c.InjectJavascript("/swagger-ui/custom.js");

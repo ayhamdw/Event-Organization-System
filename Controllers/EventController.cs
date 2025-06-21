@@ -1,12 +1,12 @@
 ﻿using System.Security.Claims;
-using Event_Organization_System.Generic;
-using Event_Organization_System.IServices;
-using Event_Organization_System.ViewModels;
-using Event_Organization_System.ViewModels.Responses;
+using EventOrganizationSystem.Generic;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.ViewModels;
+using EventOrganizationSystem.ViewModels.Responses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Event_Organization_System.controller;
+namespace EventOrganizationSystem.controller;
 [ApiController]
 [Route("api/[controller]")]
 public class EventController : ControllerBase

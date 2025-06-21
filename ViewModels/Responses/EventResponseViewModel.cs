@@ -1,6 +1,6 @@
-﻿using Event_Organization_System.model;
+﻿using EventOrganizationSystem.model;
 
-namespace Event_Organization_System.ViewModels.Responses;
+namespace EventOrganizationSystem.ViewModels.Responses;
 
 public class EventResponseViewModel
 {

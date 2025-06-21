@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using Event_Organization_System.Enums;
+using EventOrganizationSystem.Enums;
 
-namespace Event_Organization_System.model;
+namespace EventOrganizationSystem.model;
 
 public class Ticket
 {

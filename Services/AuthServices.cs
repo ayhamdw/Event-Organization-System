@@ -1,11 +1,11 @@
-﻿using Event_Organization_System.Enums;
-using Event_Organization_System.IServices;
-using Event_Organization_System.model;
-using Event_Organization_System.ViewModels;
-using Event_Organization_System.ViewModels.Responses;
+﻿using EventOrganizationSystem.Enums;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.model;
+using EventOrganizationSystem.ViewModels;
+using EventOrganizationSystem.ViewModels.Responses;
 using Microsoft.EntityFrameworkCore;
 
-namespace Event_Organization_System.Services;
+namespace EventOrganizationSystem.Services;
 
 public class AuthServices: IAuthServices
 {

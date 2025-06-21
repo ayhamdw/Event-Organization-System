@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Event_Organization_System.Helper;
+namespace EventOrganizationSystem.Helper;
 
 public class ValidationErrorExtractor
 {

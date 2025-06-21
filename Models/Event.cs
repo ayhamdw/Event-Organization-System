@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Event_Organization_System.model;
+namespace EventOrganizationSystem.model;
 
 public class Event
 {

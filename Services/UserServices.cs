@@ -1,9 +1,9 @@
-﻿using Event_Organization_System.Enums;
-using Event_Organization_System.IServices;
-using Event_Organization_System.model;
+﻿using EventOrganizationSystem.Enums;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Event_Organization_System.Services;
+namespace EventOrganizationSystem.Services;
 
 public class UserServices : IUserServices
 {

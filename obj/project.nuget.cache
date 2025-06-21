@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PqfQoeilgzU=",
+  "dgSpecHash": "yivDh4NagTc=",
   "success": true,
-  "projectFilePath": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\Event Organization System.csproj",
+  "projectFilePath": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\EventOrganizationSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ayham Dw\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Ayham Dw\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

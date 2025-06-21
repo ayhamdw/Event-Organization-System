@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Event_Organization_System.Migrations
+namespace EventOrganizationSystem.Migrations
 {
     /// <inheritdoc />
     public partial class TicketTable : Migration

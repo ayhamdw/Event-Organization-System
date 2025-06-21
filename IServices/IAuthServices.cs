@@ -1,7 +1,7 @@
-﻿using Event_Organization_System.ViewModels;
-using Event_Organization_System.ViewModels.Responses;
+﻿using EventOrganizationSystem.ViewModels;
+using EventOrganizationSystem.ViewModels.Responses;
 
-namespace Event_Organization_System.IServices;
+namespace EventOrganizationSystem.IServices;
 
 public interface IAuthServices
 {

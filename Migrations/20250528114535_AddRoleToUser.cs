@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Event_Organization_System.Migrations
+namespace EventOrganizationSystem.Migrations
 {
     /// <inheritdoc />
     public partial class AddRoleToUser : Migration

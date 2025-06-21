@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Event_Organization_System.Generic;
+namespace EventOrganizationSystem.Generic;
 
 public class CollectionUtils
 {

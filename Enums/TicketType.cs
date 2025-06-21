@@ -1,4 +1,4 @@
-﻿namespace Event_Organization_System.Enums;
+﻿namespace EventOrganizationSystem.Enums;
 
 public enum TicketType
 {

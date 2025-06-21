@@ -1,4 +1,4 @@
-﻿namespace Event_Organization_System.ViewModels;
+﻿namespace EventOrganizationSystem.ViewModels;
 
 public class GetEventViewModel
 {

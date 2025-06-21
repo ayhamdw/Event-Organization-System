@@ -1,10 +1,10 @@
-﻿using Event_Organization_System.Generic;
-using Event_Organization_System.IServices;
-using Event_Organization_System.ViewModels;
-using Event_Organization_System.ViewModels.Responses;
+﻿using EventOrganizationSystem.Generic;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.ViewModels;
+using EventOrganizationSystem.ViewModels.Responses;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Event_Organization_System.controller;
+namespace EventOrganizationSystem.controller;
 [ApiController]
 [Route("api/[controller]")]
 public class AuthenticationController : ControllerBase
@@ -70,7 +70,7 @@ public class AuthenticationController : ControllerBase
     public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
     {
         var response = await _authServices.Register(model);
-        return Created("", GeneralApiResponse<object>.Success(response, "User Successfully Registered", 201));
+        return Created("", GeneralApiResponse<object>.Success(response, "User Successfully Registered.", 201));
     }
 
 }

@@ -1,4 +1,4 @@
-﻿namespace Event_Organization_System.IServices;
+﻿namespace EventOrganizationSystem.IServices;
 
 public interface IUserServices
 {

@@ -1,12 +1,12 @@
-﻿using Event_Organization_System.IServices;
-using Event_Organization_System.model;
-using Event_Organization_System.ViewModels;
-using Event_Organization_System.ViewModels.Responses;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using Event_Organization_System.Generic;
+using EventOrganizationSystem.Generic;
+using EventOrganizationSystem.IServices;
+using EventOrganizationSystem.model;
+using EventOrganizationSystem.ViewModels;
+using EventOrganizationSystem.ViewModels.Responses;
 
-namespace Event_Organization_System.Services;
+namespace EventOrganizationSystem.Services;
 
 public class EventServices : IEventServices
 {

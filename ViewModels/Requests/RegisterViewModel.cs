@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Event_Organization_System.ViewModels;
+namespace EventOrganizationSystem.ViewModels;
 
 /// <summary>
 /// User registration request model
