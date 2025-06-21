@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event Organization System", "Event Organization System\Event Organization System.csproj", "{56A00E29-9859-439C-B14D-72D8B2E8F0BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventOrganizationSystem.Tests", "EventOrganizationSystem.Tests\EventOrganizationSystem.Tests.csproj", "{04236738-3F4A-4207-8AF0-4562CD49FB9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56A00E29-9859-439C-B14D-72D8B2E8F0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A00E29-9859-439C-B14D-72D8B2E8F0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A00E29-9859-439C-B14D-72D8B2E8F0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A00E29-9859-439C-B14D-72D8B2E8F0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04236738-3F4A-4207-8AF0-4562CD49FB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04236738-3F4A-4207-8AF0-4562CD49FB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04236738-3F4A-4207-8AF0-4562CD49FB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04236738-3F4A-4207-8AF0-4562CD49FB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
