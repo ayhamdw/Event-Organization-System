@@ -1,4 +1,4 @@
-﻿namespace Event_Organization_System.Generic;
+﻿namespace EventOrganizationSystem.Generic;
 
 public class GeneralApiResponse<T>
 {
