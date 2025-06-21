@@ -13,4 +13,10 @@ public class UnitTest1
     {
         Assert.NotEqual(5, 2 + 2);
     }
+    
+    [Fact]
+    public void Test3()
+    {
+        Assert.True(2 + 2 == 4);
+    }
 }
