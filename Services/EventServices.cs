@@ -20,7 +20,7 @@ public class EventServices : IEventServices
 
     public async Task<List<EventResponseViewModel>> GetAllEventsAsync(GetEventViewModel getEventViewModel)
     {
-        var events =  await _context.Events.ToListAsync();
+        var events =  await _context.Events.AsNoTracking().ToListAsync();
         var newEvents = CollectionUtils.ApplyPagination(events, getEventViewModel.PageNumber,
             getEventViewModel.PageSize);
         newEvents = CollectionUtils.ApplySorting(newEvents, getEventViewModel.SortBy);
@@ -35,7 +35,7 @@ public class EventServices : IEventServices
             throw new ArgumentException("Please provide a valid event id");
         }
 
-        var existingEvent = await _context.Events.FirstOrDefaultAsync(e => e.Id == id);
+        var existingEvent = await _context.Events.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
         if (existingEvent == null)
         {
             throw new KeyNotFoundException("Event not found");

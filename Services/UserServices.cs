@@ -18,13 +18,8 @@ public class UserServices : IUserServices
 
     public async Task<bool> IsUserExists(string email)
     {
-        var isUserExists = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-        if (isUserExists == null)
-        {
-            return false;
-        }
-
-        return true;
+        var isUserExists = await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == email);
+        return isUserExists != null;
     }
 
     public async Task<bool> IsUserBookedTicket(int userId, int eventId)
