@@ -10,6 +10,11 @@ public class EventResponseViewModel
     public string Location  { get; set; }
     public int RemainingSeats { get; set; }
     
+    public EventResponseViewModel()
+    {
+        // Default constructor for model binding
+    }
+    
     public EventResponseViewModel(Event eventEntity)
     {
         Title = eventEntity.Title;

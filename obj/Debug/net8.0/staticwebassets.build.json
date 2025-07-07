@@ -1,27 +1,27 @@
 {
   "Version": 1,
-  "Hash": "x+CXhxfSVICChCmx3mTk5V7CuPMKqBTeY+ac2Usaomw=",
-  "Source": "Event Organization System",
-  "BasePath": "_content/Event Organization System",
+  "Hash": "p2q8r6VwAqOao4615av77Rsb8qP5+ABJSOXLnjvsR6I=",
+  "Source": "EventOrganizationSystem",
+  "BasePath": "_content/EventOrganizationSystem",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "Event Organization System\\wwwroot",
-      "Source": "Event Organization System",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\",
-      "BasePath": "_content/Event Organization System",
+      "Name": "EventOrganizationSystem\\wwwroot",
+      "Source": "EventOrganizationSystem",
+      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "BasePath": "_content/EventOrganizationSystem",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\swagger-ui\\custom.css",
-      "SourceId": "Event Organization System",
+      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\custom.css",
+      "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\",
-      "BasePath": "_content/Event Organization System",
+      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/custom.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -36,11 +36,11 @@
       "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.css"
     },
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\swagger-ui\\custom.js",
-      "SourceId": "Event Organization System",
+      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\custom.js",
+      "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\",
-      "BasePath": "_content/Event Organization System",
+      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/custom.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -55,11 +55,11 @@
       "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.js"
     },
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\swagger-ui\\logo.png",
-      "SourceId": "Event Organization System",
+      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\logo.png",
+      "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\Event Organization System\\wwwroot\\",
-      "BasePath": "_content/Event Organization System",
+      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
