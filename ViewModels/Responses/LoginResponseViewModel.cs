@@ -19,9 +19,16 @@ public class LoginResponseViewModel
     /// </summary>
     /// <example>User</example>
     public string Role { get; set; }
+    
+    /// <summary>
+    /// User's ID
+    /// </summary>
+    /// <example>1</example>
+    public int Id { get; set; }
 
-    public LoginResponseViewModel(string token, string email, string role)
+    public LoginResponseViewModel(int id, string token, string email, string role)
     {
+        Id = id;
         Token = token;
         Email = email;
         Role = role;
