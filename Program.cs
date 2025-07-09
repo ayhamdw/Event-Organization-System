@@ -68,7 +68,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register your services
 builder.Services.AddScoped<IAuthServices, AuthServices>();
 builder.Services.AddScoped<IJwtService, JwtServices>();
 builder.Services.AddScoped<IValidatePasswordServices, ValidatePasswordServices>();
