@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 DotEnv.Load();
+var AllowedOrigins = "AllowedWebsiteOrigin";
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -20,6 +21,17 @@ if (connectionString == null)
 {
     throw new InvalidOperationException("Missing connection string");
 }
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowedOrigins, policy =>
+    {
+        policy.WithOrigins("https://localhost:5173", "http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 builder.Services.AddControllers()
     .ConfigureApiBehaviorOptions(options =>
