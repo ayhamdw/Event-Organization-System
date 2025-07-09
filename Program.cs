@@ -81,7 +81,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
+app.UseCors(AllowedOrigins);
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseAuthentication();
