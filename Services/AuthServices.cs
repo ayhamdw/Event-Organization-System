@@ -44,7 +44,7 @@ public class AuthServices: IAuthServices
 
         var token = _jwtService.GenerateToken(user.Id, user.Role.ToString());
 
-        var result = new LoginResponseViewModel(user.Id ,token, user.Email, user.Role.ToString());
+        var result = new LoginResponseViewModel(user.Id ,token, user.Email, user.Role.ToString() , user.Name);
         return result;
     }
 
