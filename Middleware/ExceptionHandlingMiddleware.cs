@@ -29,7 +29,7 @@ public class ExceptionHandlingMiddleware
 
     private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        _logger.LogError(exception , "An unexpected error occurrred");
+        _logger.LogError(exception , "An unexpected error occurred");
 
         var response = exception switch
         {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p2q8r6VwAqOao4615av77Rsb8qP5+ABJSOXLnjvsR6I=",
+  "Hash": "X7kWPvzR3WfsVP+FtFXZWd76eIh2//fGXwCEMBNHOB4=",
   "Source": "EventOrganizationSystem",
   "BasePath": "_content/EventOrganizationSystem",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "EventOrganizationSystem\\wwwroot",
+      "Name": "EventOrganizationSystem/wwwroot",
       "Source": "EventOrganizationSystem",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "ContentRoot": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/",
       "BasePath": "_content/EventOrganizationSystem",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\custom.css",
+      "Identity": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/swagger-ui/custom.css",
       "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "ContentRoot": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/",
       "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/custom.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.css"
+      "OriginalItemSpec": "wwwroot/swagger-ui/custom.css"
     },
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\custom.js",
+      "Identity": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/swagger-ui/custom.js",
       "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "ContentRoot": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/",
       "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/custom.js",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\swagger-ui\\custom.js"
+      "OriginalItemSpec": "wwwroot/swagger-ui/custom.js"
     },
     {
-      "Identity": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\swagger-ui\\logo.png",
+      "Identity": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/swagger-ui/logo.png",
       "SourceId": "EventOrganizationSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\pojects_and_hws\\.net Training\\Event Organization System\\EventOrganizationSystem\\wwwroot\\",
+      "ContentRoot": "/home/ayhamdw/Projects/Event-Organization-System/wwwroot/",
       "BasePath": "_content/EventOrganizationSystem",
       "RelativePath": "swagger-ui/logo.png",
       "AssetKind": "All",
@@ -71,7 +71,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\swagger-ui\\logo.png"
+      "OriginalItemSpec": "wwwroot/swagger-ui/logo.png"
     }
   ]
 }
