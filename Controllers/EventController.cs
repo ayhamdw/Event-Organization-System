@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventOrganizationSystem.controller;
+
 [ApiController]
 [Route("api/[controller]")]
 public class EventController : ControllerBase
@@ -50,7 +51,7 @@ public class EventController : ControllerBase
     /// <response code="200">Successfully retrieved event details</response>
     /// <response code="404">Event not found</response>
     [HttpGet("{id:int}")]
-    public async Task <IActionResult> GetEventById([FromRoute] int id)
+    public async Task<IActionResult> GetEventById([FromRoute] int id)
     {
         var eventResponse = await _eventServices.GetEventByIdAsync(id);
         return Ok(GeneralApiResponse<EventResponseViewModel>.Success(eventResponse));
@@ -81,19 +82,19 @@ public class EventController : ControllerBase
     /// <response code="401">Unauthorized - user not authenticated</response>
     /// <response code="403">Forbidden - user not an organizer</response>
     [HttpPost]
-    [Authorize (Roles = "Organizer")]
+    [Authorize(Roles = "Organizer")]
     public async Task<IActionResult> CreateEvent([FromBody] CreateEventViewModel createEventViewModel)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null) 
+        if (userId == null)
             return Unauthorized(GeneralApiResponse<string>.Failure("User not authenticated", 401));
-        
-        if (!int.TryParse(userId, out var parsedUserId)) 
+
+        if (!int.TryParse(userId, out var parsedUserId))
             return BadRequest(GeneralApiResponse<string>.Success("Invalid user ID format", 400));
-        
-        var createdEvent = await _eventServices.CreateEventAsync(createEventViewModel , parsedUserId);
+
+        var createdEvent = await _eventServices.CreateEventAsync(createEventViewModel, parsedUserId);
         return Created("",
-            GeneralApiResponse<EventResponseViewModel>.Success(createdEvent, "Event created successfully" , 201));
+            GeneralApiResponse<EventResponseViewModel>.Success(createdEvent, "Event created successfully", 201));
     }
     /// <summary>
     /// Updates an existing event (Organizer role required)
@@ -124,13 +125,13 @@ public class EventController : ControllerBase
     /// <response code="404">Event not found</response>
     [HttpPut("{id:int}")]
     [Authorize(Roles = "Organizer")]
-    public async Task<IActionResult> UpdateEvent([FromRoute]int id, [FromBody] CreateEventViewModel createEventViewModel)
+    public async Task<IActionResult> UpdateEvent([FromRoute] int id, [FromBody] CreateEventViewModel createEventViewModel)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null) 
+        if (userId == null)
             return Unauthorized(GeneralApiResponse<string>.Failure("User not authenticated", 401));
-        
-        if (!int.TryParse(userId, out var parsedUserId)) 
+
+        if (!int.TryParse(userId, out var parsedUserId))
             return BadRequest(GeneralApiResponse<string>.Success("Invalid user ID format", 400));
         var response = await _eventServices.UpdateEventAsync(createEventViewModel, id, parsedUserId);
         return Ok(GeneralApiResponse<EventResponseViewModel>.Success(response));
@@ -155,13 +156,13 @@ public class EventController : ControllerBase
     public async Task<IActionResult> DeleteEvent([FromRoute] int id)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null) 
+        if (userId == null)
             return Unauthorized(GeneralApiResponse<string>.Failure("User not authenticated", 401));
-        
-        if (!int.TryParse(userId, out var parsedUserId)) 
+
+        if (!int.TryParse(userId, out var parsedUserId))
             return BadRequest(GeneralApiResponse<string>.Success("Invalid user ID format", 400));
         await _eventServices.DeleteEventAsync(id, parsedUserId);
         return Ok(GeneralApiResponse<bool>.Success());
     }
-    
+
 }

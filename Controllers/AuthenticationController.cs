@@ -5,17 +5,18 @@ using EventOrganizationSystem.ViewModels.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventOrganizationSystem.controller;
+
 [ApiController]
 [Route("api/[controller]")]
 public class AuthenticationController : ControllerBase
 {
-    private readonly  IAuthServices _authServices;
+    private readonly IAuthServices _authServices;
 
     public AuthenticationController(IAuthServices authServices)
     {
         _authServices = authServices;
     }
-    
+
     /// <summary>
     /// Authenticates a user and returns a JWT token
     /// </summary>
@@ -43,7 +44,7 @@ public class AuthenticationController : ControllerBase
         var response = await _authServices.Login(model);
         return Ok(GeneralApiResponse<object>.Success(response, "Uses Successfully Logged In"));
     }
-    
+
     /// <summary>
     /// Registers a new user account
     /// </summary>
