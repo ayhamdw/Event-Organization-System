@@ -1,5 +1,7 @@
 using System.Text;
 using dotenv.net;
+using Event_Organization_System.IServices;
+using Event_Organization_System.Services;
 using EventOrganizationSystem.Generic;
 using EventOrganizationSystem.Helper;
 using EventOrganizationSystem.IServices;
@@ -74,6 +76,7 @@ builder.Services.AddScoped<IValidatePasswordServices, ValidatePasswordServices>(
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IEventServices, EventServices>();
 builder.Services.AddScoped<ITicketServices, TicketServices>();
+builder.Services.AddScoped<IAdminServices, AdminServices>();
 
 var app = builder.Build();
 
@@ -92,7 +95,7 @@ app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "EventOrganizationSystem API V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Event OrganizationSystem API V1");
     c.RoutePrefix = string.Empty;
     c.InjectStylesheet("/swagger-ui/custom.css");
     c.InjectJavascript("/swagger-ui/custom.js");
